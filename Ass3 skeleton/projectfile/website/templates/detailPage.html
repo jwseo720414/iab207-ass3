@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/detailPage.css">
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+    <section class=" p-5 pt-5  p-lg-0 p-sm-0 text-center text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                
+                <img class="img-fluid w-50 d-sm-block img-responsive p-5" style="max-width: 700px; max-height: 360px;" src="{{'/../static/img/' + event.image}}" alt ="main image" />
+                <div>
+                    <!-- <p>OPM, Velvet and Lust</p> -->
+                    <h1> {{event.name}} </h1>
+                    <h2 class="lead my-4">
+                        <!-- <b>9:00pm, Fri 2 September, 2022 </b>  -->
+                        <b>{{event.startDate}}</b>
+                    </h2>
+                    <!-- <p>
+                        Kenjin, QLD
+                    </p> -->
+                </div> 
+            </div>
+
+        </div>
+    </section>
+    <section class="p-5 pt-5 p-lg-0 p-sm-0 mb-3">
+        <div class="container">
+            <div class="bg-dark text-light p-3 rounded">
+                <h3> BUY TICKETS</h3>
+            </div>
+        </div>
+    
+        <div class="container">
+           <div class="row">
+                <div class="col-8 p-4">
+                    <h5>General Admission</h5>
+                    <p> Sales Close: {{event.startDate}}, 2022</p>
+                </div>
+                <div class="col-2 p-4 ml-3">
+                    <h2>${{event.price}}</h2>
+                </div>
+                <div class="col-2 p-4 ml-3">
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Select
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button class="dropdown-item" type="button">1</button>
+                          <button class="dropdown-item" type="button">2</button>
+                          <button class="dropdown-item" type="button">3</button>
+                        </div>
+                      </div>
+    
+           </div>
+    
+        </div>
+    </section>
+   
+
+
+    <section class="p-5 pt-5  p-lg-0 p-sm-0">
+        <div class="container">
+            <div class="bg-dark text-light p-3 rounded">
+                <h3> EVENT DETAILS</h3>
+            </div>
+            
+        </div>
+
+        <div class="container ">
+        <div class="row flex-row-reverse p-2">
+                <!-- <P>Time to celebrate the mid-semester break at Brisbane's BIGGEST student party! <br>
+
+                    The most anticipated event in Brisbane is BACK with our annual Mid Semester Break Party - Featuring the best DJs in the scene. Get your tickets early as this event will SELL OUT! <br>
+                    ═════════════════════════ <br>
+                    OPM at The Warehouse (formerly Family Nightclub) aims to bring it back to the basics, providing you with an unforgettable electronic music experience and  vibe. <br>
+                    
+                    "For the better part of the last two decades Family Nightclub has been the driving force behind the clubbing movement in South East Queensland - having placed Brisbane on the Dance Music map across Australia and around the world." <br>
+                    ═════════════════════════ <br>
+                    ◈ Stunning rooftop Bar & Smoking Area <br>
+                    | EDM | HOUSE | BANGERS | HIP HOP | R&B <br>
+                    ◈ FRIDAY 23rd Of September <br>
+                    ◈ DOORS OPEN AT 9.00pm <br>
+                    ◈ THE WAREHOUSE (FORMERLY FAMILY NIGHTCLUB) <br>
+                    ◈ 8 MCLACHLAN ST FORTITUDE VALLEY <br>
+                    ═════════════════════════ <br>
+                    ➊ STANDARD DRESS CODE & DOOR POLICY APPLIES <br>
+                    - Zero Tolerance to Bad Behaviour <br>
+                    - Valid Australian ID or Passport Required <br>
+                    - Management has the right to Refuse entry <br>
+                    "OPM, It's an Addiction"</P> -->
+                <p><pre>{{event.description}}</pre></p>
+        </div>
+
+        </div>
+
+    </section>
+    
+    
+    
+{% endblock %}

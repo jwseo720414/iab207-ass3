@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid pt-5">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">x</button>
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- Form rendering is simple and easy if using bootstrap -->
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card" style="width: 600px; margin-top: 5%; margin-bottom: 5%">
+            <div class="card-body">
+                <div class="page-header">
+                    <div style="text-align: center;">
+                        <img class="img-fluid nav-logo" src="/../static/img/brand_logo.png"
+                            alt="Concert Finder"
+                            style="background-color: black; height: 50px; width: auto; margin-left: auto; margin-right: auto; margin-bottom: 25px">
+                    </div>
+                    <h4 style="text-align: center;">{{title}}</h4>
+                </div>
+                {{render_form(form)}}
+                <!-- When you have login form, then do show the user a link to register -->
+                {% if title|lower =='login' %}
+
+                <p>New user?</p>
+                <p><a href="#">Click here to register</a>.</p>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

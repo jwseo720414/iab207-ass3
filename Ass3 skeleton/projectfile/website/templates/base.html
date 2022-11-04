@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IAB207 Assignment 3</title>
+    <meta name="description" content="Music Events">
+    <meta name="viewport" content="Music events maanagement website in Brisbane">
+
+    <meta author ="Jaewon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/detailPage.css">
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-secondary">
+            <div class="container">
+                <a href="#" class="navbar-brand text-light">
+                    MUZETix
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type ="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navmenu">
+                    
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-light">Home</a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-light">Create event</a>
+                        </li>
+
+
+
+                        
+
+
+
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-light">Log Out</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a href="{{url_for('auth.authenticate')}}" class="nav-link text-light">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-light">Register</a>
+                        </li>
+                        {% endif %}
+                            
+
+                    </ul>
+    
+                </div>
+            </div>
+        </nav>
+
+        <!-- {% block header %}
+        {% endblock %} -->
+
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

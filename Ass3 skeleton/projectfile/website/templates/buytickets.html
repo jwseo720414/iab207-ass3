@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+    <title>Buy tickets</title>
+</head>
+<body>
+<!--Navigation-->
+<div id="app">
+   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xlg-1 col-md-2 col-sm-12 bg-info1  p-lg-3 text-md-center colleft">            
+            </div>
+            <div class="col-xlg-11 col-md-10 col-sm-12 p-5 colMain">
+                
+                    <article class="card-body mx-auto" style="max-width: 500px;">
+                        <h1 class="card-title mt-3 text-center text-info register">Your Details</h1>
+                        <p class="text-center"><a href="">Sign in to MUZETix</a> or continue as a guest!</p>
+    
+    
+                        <div class="d-flex pb-3">
+                            <hr class="my-auto flex-grow-1">
+                            <div class="px-4 text-muted">Please fill out the following</div>
+                            <hr class="my-auto flex-grow-1">
+                        </div>
+    
+                                <form>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                </div>
+                                <input v-model="registerForm.firstname" name="" class="form-control" placeholder="First Name*" type="text" required placeholder="First Name" oninvalid="this.setCustomValidity('Please enter your first name here.')"
+                                oninput="this.setCustomValidity('')">
+                            </div> <!-- form-group// -->
+                              <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                </div>
+                                <input v-model="registerForm.surname" name="" class="form-control" placeholder="Last Name*" type="text" required placeholder="Las Name" oninvalid="this.setCustomValidity('Please eneter your last name here.')"
+                                oninput="this.setCustomValidity('')">
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                </div>
+                                <input v-model="registerForm.email" name="" class="form-control" placeholder="Enter your email" type="email" required placeholder="Email*">
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-map-marker-alt"></i> </span>
+                                </div>
+                                <input v-model="registerForm.address" class="form-control" placeholder="Residency / Address*" type="text" required placeholder="Address*"  oninvalid="this.setCustomValidity('Please enter your address / residency.')"
+                                oninput="this.setCustomValidity('')">
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-university"></i> </span>
+                                </div>
+                                <input v-model="registerForm.major" class="form-control" placeholder="PhoneNumber*" type="text" required placeholder="Major*"  oninvalid="this.setCustomValidity('Please enter your phone number.')"
+                                oninput="this.setCustomValidity('')">
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-university"></i> </span>
+                                </div>
+                                <input v-model="registerForm.minor" class="form-control" placeholder="Payment Method*" type="text" required placeholder="Minor" oninvalid="this.setCustomValidity('Please enter your minor.')"
+                                oninput="this.setCustomValidity('')">
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-cogs"></i> </span>
+                                </div>
+                                <input v-model="registerForm.skills" class="form-control" placeholder="Gender*" type="text" required placeholder="Skills*" oninvalid="this.setCustomValidity('Please enter your Gender.')"
+                                oninput="this.setCustomValidity('')">
+                                
+                            </div> <!-- form-group// -->
+                            
+                            <p class="p1"> By submitting the details you agree to our <b>terms of use</b>, <b>privacy policy</b>, <b>collection statement</b>.</p>
+                            <div class="form-group pt-3">
+                                <button type="submit" class="btn btn-block btn1" @click="studentRegister"><b>Purchase</b></button>
+                            </div> <!-- form-group// -->
+                            <p class="text-center">Have an account? <a href="login.html">Log In</a> </p>
+    
+                           
+                        </form>
+                    </article>
+                
+                <!-- card.// -->
+            </div>
+        </div>
+    </div>
+
+
+
+    
+</div>
+
+
+
+</body>
+<style>
+     body {
+        font-family: akzidenz-grotesk,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    .btn1  {
+        background-color: #00ffa8;
+        color: black;
+        border-radius: 10px;
+        font-size: 18px;
+        height: 50px;       
+        width: 300px;
+        margin-bottom: 15px;
+        margin-left: 80px;
+    }
+    .btn1:hover {
+        background-color: black;
+        color: white;
+    }
+    .btn2 {
+        border-color: white;
+    }
+    .btn2:hover {
+        background-color: white !important;
+        color: #0075ff !important;
+        border-color: white !important;
+    }
+    .bg-info1 {
+        background-color: #63A7AC;       
+    }
+    .img-fluid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image2 {
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #BCD9DB;
+        border-color: #BCD9DB;
+        color: black;
+    }
+     .input-group-text {
+         background-color: white;
+         border-right: 0px;
+         padding-top: 15px;
+         padding-bottom: 13px;
+     }
+     .form-control {
+         border-left: 0px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+     }
+     .form-control:focus {
+         outline-color: transparent;
+         outline-style:solid;
+         box-shadow: 0 0 0 1px #BCD9DB;
+     }
+     .form-group{
+        padding-top: 10px;
+        padding-bottom: 10px;
+     }
+     .p1 {
+         text-align: center;
+     }
+     .colleft {
+         background-color: #0f082e;
+         height: 850px;
+     }
+     .colMain {
+         background-color: white;
+     }
+     .register {
+         color: #0f082e !important;
+     }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="../js/axios-0.18.0.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="../element-ui/lib/theme-chalk/index.css">
+<script>
+    Vue.config.productionTip = false;
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                registerForm:{
+                    firstname: '',
+                    surname: '',
+                    email:'',
+                    address:'',
+                    major:'',
+                    minor:'',
+                    skills:''
+                }
+            }
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            studentRegister(){
+                axios({
+                    method: "POST",
+                    url: "http://localhost/students/register",
+                    data: this.registerForm
+                })
+                .then(res => {
+                    if(res.data.code === 1){
+                        window.location.href = "login.html"
+                    }
+                    else{
+                        this.$message.error("Unknown error")
+                    }
+
+                })
+            }
+        }
+
+
+    })
+    ;
+</script>
+</html>
