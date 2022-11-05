@@ -27,6 +27,15 @@ def Event_details(event_id):
     event = Events.query.get_or_404(event_id)
     return render_template("detailPage.html", event=event, user=current_user)
 
+@bp.route('/search')
+def search():
+    if request.args['search']:
+        print(request.args['search'])
+        dest = "%" + request.args['search'] + '%'
+        events = Events.query.filter(Events.name.like(dest)).all()
+        return render_template('index.html', events=events, title='Home')
+    else:
+        return redirect(url_for('main.index'))
 
 @bp.route('/createevent', methods=['GET', 'POST'])
 @login_required
