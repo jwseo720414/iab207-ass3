@@ -26,3 +26,7 @@ class Events(db.Model):
     ticketNum = db.Column(db.Integer)
     author = db.Column(db.Integer)
     image = db.Column(db.String(60), nullable=False) 
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    def __repr__(self):
+        return '<Event {0}, Title: {1}>'.format(self.id, self.title)

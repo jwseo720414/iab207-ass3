@@ -7,7 +7,7 @@ from . import db
 import json
 from flask_login import login_required, current_user
 
-from .forms import  CreateEventForm
+from .forms import  CreateEventForm, EditEventForm
 # BookingForm, CommentForm, EditEventForm
 from datetime import datetime
 from .functions import check_upload_file
@@ -54,7 +54,8 @@ def createevent():
             price=form.price.data,
             ticketNum=form.tickets.data,
             author=form.artist.data,
-            image=check_upload_file(form.image.data)
+            image=check_upload_file(form.image.data),
+            user_id=current_user.id
             )
 # user_id=current_user.id
 
@@ -66,3 +67,42 @@ def createevent():
         return redirect(url_for('main.index'))
 
     return render_template('/eventCreation.html', form=form, title="Create Event")
+
+@bp.route('/editevent/<id>', methods=['GET', 'POST'])
+@login_required
+def editevent(id):
+    event = Events.query.filter_by(eventId=id).first()
+    form = EditEventForm()
+
+    if (request.method == 'GET'):
+        form.eventname.data = event.name
+        form.startDate.data = event.startDate
+        form.endDate.data = event.endDate
+        form.info.data = event.description
+        form.venue.data = event.location
+        form.status.data = event.status
+        form.price.data = event.price
+        form.tickets.data = event.ticketNum
+        form.artist.data = event.author
+
+    if (form.validate_on_submit() == True):
+        print("Event Edit form has been submitted")
+
+        event.name = form.eventname.data
+        event.startDate = form.startDate.data
+        event.endDate = form.endDate.data
+        event.description = form.info.data
+        event.location = form.venue.data
+        event.status = form.status.data
+        event.price = form.price.data
+        event.ticketNum = form.tickets.data
+        event.author = form.artist.data        
+        event.image = check_upload_file(form.image.data)
+
+
+        db.session.commit()
+        return redirect(url_for('main.index'))
+
+    return render_template('/eventEdit.html', form=form, title="Edit Event", event=event)
+
+
