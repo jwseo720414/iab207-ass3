@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block header %}
+<link rel="stylesheet" href="css/eventCreation.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+{% endblock %}
+
+
+{% block content %}
+   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xlg-1 col-md-2 col-sm-12 bg-info1  p-lg-3 text-md-center colleft">            
+            </div>
+            <div class="col-xlg-11 col-md-10 col-sm-12 p-5 colMain">
+                
+                    <article class="card-body mx-auto" style="max-width: 500px;">
+                        <h1 class="card-title mt-3 text-center text-info register">{{title}}</h1>
+    
+    
+                        <div class="d-flex pb-3">
+                            <hr class="my-auto flex-grow-1">
+                            <div class="px-4 text-muted">Please fill out the following</div>
+                            <hr class="my-auto flex-grow-1">
+                        </div>
+    
+                            <form method="POST" action="{{url_for('main.createevent')}}" enctype="multipart/form-data">
+                                {{form.hidden_tag()}}
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-ticket-alt p-1" aria-hidden="true"></i> <label class="p-1" >{{form.eventname.label}}</label> </span>
+                                    
+                                </div>
+                                {{form.eventname}}
+                  
+
+                            </div> <!-- form-group// -->
+
+                              <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-calendar p-2"></i> {{form.startDate.label}}</span>
+                                </div>
+                                {{form.startDate}}
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-calendar p-2"></i> {{form.endDate.label}}</span>
+                                </div>
+                                {{form.endDate}}
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-info-circle p-2"></i> {{form.info.label}}</span>
+                                </div>
+                                {{form.info(style='height: 500px; width: 600px')}}
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-map-marker-alt p-2"></i> {{form.venue.label}}</span>
+                                </div>
+                                {{form.venue}}
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user p-2"></i> {{form.status.label}} </span>
+                                </div>
+                                {{form.status}}
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-usd p-2"></i> {{form.price.label}}</span>
+                                </div>
+                                {{form.price}}
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-ticket-alt p-2"></i> {{form.tickets.label}}</span>
+                                </div>
+                                {{form.tickets}}
+                                
+                                
+                            </div> <!-- form-group// -->
+                            <div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user p-2"></i> {{form.artist.label}}</span>
+                                </div>
+                                {{form.artist}}
+                                
+                                
+                            </div> <!-- form-group// --><div class="form-group input-group p-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-picture-o p-2"></i> {{form.image.image}}</span>
+                                </div>
+                                {{form.image}}
+                                
+                                
+                            </div> <!-- form-group// -->
+                            <p class="p1"> By submitting the details you agree to our <b>terms of use</b>, <b>privacy policy</b>, <b>collection statement</b>.</p>
+                            <div class="form-group pt-3">
+                                {{form.submit}}
+                               
+                            </div> <!-- form-group// -->
+                            
+    
+                           
+                        </form>
+                    </article>
+                
+                <!-- card.// -->
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+

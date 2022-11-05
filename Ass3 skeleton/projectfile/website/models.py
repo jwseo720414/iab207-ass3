@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String)
     dob = db.Column(db.String)
-    profileImg = db.Column(db.String(150))
+    # profileImg = db.Column(db.String(150))
 
 
 class Events(db.Model):

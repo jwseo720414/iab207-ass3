@@ -1,0 +1,76 @@
+.container-fluid {
+    font-family: akzidenz-grotesk,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.btn1  {
+    background-color: #00ffa8;
+    color: black;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 50px;       
+    width: 300px;
+    margin-bottom: 15px;
+    margin-left: 80px;
+}
+.btn1:hover {
+    background-color: black;
+    color: white;
+}
+.btn2 {
+    border-color: white;
+}
+.btn2:hover {
+    background-color: white !important;
+    color: #0075ff !important;
+    border-color: white !important;
+}
+.bg-info1 {
+    background-color: #63A7AC;       
+}
+.img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image2 {
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+}
+.btn-outline-secondary:hover {
+    background-color: #BCD9DB;
+    border-color: #BCD9DB;
+    color: black;
+}
+ .input-group-text {
+     background-color: white;
+     border-right: 0px;
+     padding-top: 15px;
+     padding-bottom: 13px;
+ }
+ .form-control {
+     border-left: 0px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+ }
+ .form-control:focus {
+     outline-color: transparent;
+     outline-style:solid;
+     box-shadow: 0 0 0 1px #BCD9DB;
+ }
+ .form-group{
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+ .p1 {
+     text-align: center;
+ }
+ .colleft {
+     background-color: #0f082e;
+     height: 850px;
+ }
+ .colMain {
+     background-color: white;
+ }
+ .register {
+     color: #0f082e !important;
+ }
